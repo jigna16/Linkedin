@@ -1,5 +1,6 @@
 const express=require("express")
 require('dotenv').config()
+const cors=require("cors")
 const app=express()
 const {connection}=require("./db")
 const {userRouter}=require("./route/user.route")
@@ -8,6 +9,7 @@ const{authenticate}=require("./Middleware/authenticate.middleware")
 require('dotenv').config()
 
 app.use(express.json())
+app.use(cors())
 
 app.use("/users",userRouter)
 app.use(authenticate)
