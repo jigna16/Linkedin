@@ -1,6 +1,7 @@
 const express=require("express")
 const {PostModel}=require("../model/post.model")
 const postRouter=express.Router()
+require('dotenv').config()
 
 
 //for getting all the posts
